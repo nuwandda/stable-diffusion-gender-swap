@@ -1,4 +1,4 @@
-# Stable Diffusion Gender Swap
+# Gender Swap using Stable Diffusion 
 <a name="readme-top"></a>
 
 <!-- ABOUT THE PROJECT -->
