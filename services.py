@@ -16,7 +16,7 @@ from pkg_resources import parse_version
 Note: make sure .env exist and contains your token
 """
     
-MODEL_PATH = os.getenv('SECOND_MODEL_PATH')
+MODEL_PATH = os.getenv('MODEL_PATH')
 if MODEL_PATH is None:
     MODEL_PATH = 'weights/realisticVisionV60B1_v20Novae.safetensors'
     
