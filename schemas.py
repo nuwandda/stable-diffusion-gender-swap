@@ -5,8 +5,8 @@ from fastapi import UploadFile
 
 class _PromptBase(_pydantic.BaseModel):
     seed: Optional[float] = -1
-    num_inference_steps: int = 50
-    guidance_scale: float = 7
+    num_inference_steps: int = 30
+    guidance_scale: float = 12
     strength: float = 0.6
 
 

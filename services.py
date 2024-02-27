@@ -68,11 +68,12 @@ async def generate_image(imgPrompt: _schemas.ImageCreate) -> Image:
         return 'There should be single face in the image.'
     
     target_gender = 'female' if gender_result.lower() == 'male' else 'male'
-    final_prompt = """A realistic portrait of a {}, rim lighting, 
+    clothes = 'feminine' if gender_result.lower() == 'male' else 'masculine'
+    final_prompt = """A realistic portrait of a {}, wearing {} clothes, rim lighting, 
     studio lighting, dslr, ultra quality, sharp focus, tack sharp, dof, 
     film grain, Fujifilm XT3, crystal clear, 8K UHD, highly detailed glossy eyes, 
-    high detailed skin, skin pores""".format(target_gender)
-    negative_prompt = """nude, nsfw, disfigured, ugly, bad, immature, cartoon, anime, 3d, painting, b&w"""
+    high detailed skin, skin pores""".format(target_gender, clothes)
+    negative_prompt = """nude, nsfw, disfigured, ugly, bad, immature, cartoon, anime, 3d, painting, b&w, nude, nsfw"""
     print('Final Prompt is: ', final_prompt)
 
     image: Image = pipe(final_prompt,
