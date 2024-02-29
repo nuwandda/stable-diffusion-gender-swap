@@ -19,6 +19,7 @@ RUN wget https://huggingface.co/spaces/nuwandaa/adcreative-demo-api/resolve/main
 COPY requirements.txt /usr/app/requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install typing-extensions==4.9.0 --upgrade
+RUN pip install git+https://github.com/sajjjadayobi/FaceLib.git
 ENV MODEL_PATH="weights/realisticVisionV60B1_v20Novae.safetensors"
 COPY . .
 
