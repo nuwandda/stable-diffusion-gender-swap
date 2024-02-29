@@ -3,7 +3,7 @@ import schemas as _schemas
 import torch 
 from diffusers import StableDiffusionImg2ImgPipeline
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from PIL import Image
 from io import BytesIO
 from utils import set_seed, age_and_gender
@@ -68,11 +68,11 @@ async def generate_image(imgPrompt: _schemas.ImageCreate) -> Image:
         return 'There should be single face in the image.'
     
     target_gender = 'female' if gender_result.lower() == 'male' else 'male'
-    if age_result < 10:
+    if age_result < 15:
         target_gender = 'girl' if gender_result.lower() == 'male' else 'boy'
     
     clothes = 'feminine' if gender_result.lower() == 'male' else 'masculine'
-    
+
     final_prompt = """A realistic portrait of a {}, wearing {} clothes, rim lighting, 
     studio lighting, dslr, ultra quality, sharp focus, tack sharp, dof, 
     film grain, Fujifilm XT3, crystal clear, 8K UHD, highly detailed glossy eyes, 
