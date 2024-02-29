@@ -33,6 +33,6 @@ def predict_gender(face_img):
     gender_preds = gender_net.forward()
     i = gender_preds[0].argmax()
     gender = GENDER_LIST[i]
-    gender_confidence_score = gender_preds[0][i]
+    # gender_confidence_score = gender_preds[0][i]
     
-    return gender, gender_confidence_score
+    return gender
